@@ -12,4 +12,5 @@ Clone this repository on your machine and write sudo npm link in the project dir
 
 This is a console game. To start playing, type Brain-Even in the console.
 
+• **Installation** from the local repository and **brain-even** demonstration:
 ![Alt Text](gif/install and brain-even.gif)
