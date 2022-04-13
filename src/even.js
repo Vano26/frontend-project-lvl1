@@ -24,7 +24,7 @@ const brainEven = () => {
     const num = randomNum(1, 99); // генерим случайно число
     const answer = isEven(num); // проверяем первое число на четность
     console.log(`Question: ${num}`); // задаем вопрос
-    const userAnswer = readlineSync.question('Your answer:'); // получаем ответ игрока
+    const userAnswer = readlineSync.question('Your answer: '); // получаем ответ игрока
     if (userAnswer === answer) {
       console.log('Correct!');
     } else {
