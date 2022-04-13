@@ -7,8 +7,8 @@
 
 
 
-**Installation**
-\nClone this repository on your machine and write sudo npm link in the project directory. Implied that you have already installed Node.js
+## Installation:
+Clone this repository on your machine and write sudo npm link in the project directory. Implied that you have already installed Node.js
 
 This is a console game. To start playing, type brain-even in the console.
 
