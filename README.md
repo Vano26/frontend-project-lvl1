@@ -14,3 +14,6 @@ This is a console game. To start playing, type brain-even in the console.
 
 • **Installation** from the local repository and **brain-even** demonstration:
 ![Alt Text](gif/install_and_brain-even.gif)
+
+• **brain-calc** demonstration:
+![Alt Text](gif/brain-calc.gif)
