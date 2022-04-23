@@ -9,7 +9,7 @@ const brainEven = () => {
   // сообщаем правила
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  // функция генерации случайноего числа
+  // функция генерации случайноего числа (с округлением)
   const randomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
   // функция проверки числа на четность
@@ -21,7 +21,7 @@ const brainEven = () => {
 
   // первый раунд
   for (let i = 0; i < 3; i += 1) {
-    const num = randomNum(1, 99); // генерим случайно число
+    const num = randomNum(1, 99); // генерим случайное число
     const answer = isEven(num); // проверяем первое число на четность
     console.log(`Question: ${num}`); // задаем вопрос
     const userAnswer = readlineSync.question('Your answer: '); // получаем ответ игрока
