@@ -17,3 +17,6 @@ This is a console game. To start playing, type brain-even in the console.
 
 • **brain-calc** demonstration:
 ![Alt Text](gif/brain-calc.gif)
+
+• **brain-gcd** demonstration:
+![Alt Text](gif/brain-gcd.gif)
