@@ -20,3 +20,6 @@ This is a console game. To start playing, type brain-even in the console.
 
 • **brain-gcd** demonstration:
 ![Alt Text](gif/brain-gcd.gif)
+
+• **brain-progression** demonstration:
+![Alt Text](gif/brain-progression.gif)
