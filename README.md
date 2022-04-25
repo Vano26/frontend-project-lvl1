@@ -23,3 +23,6 @@ This is a console game. To start playing, type brain-even in the console.
 
 • **brain-progression** demonstration:
 ![Alt Text](gif/brain-progression.gif)
+
+• **brain-prime** demonstration:
+![Alt Text](gif/brain-prime.gif)
