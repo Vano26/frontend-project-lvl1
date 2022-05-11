@@ -15,7 +15,7 @@ const createProgression = (start, length, counter) => {
 const generateQuestion = (progression, item) => {
   const newProgression = progression.slice(0);
   const newItem = item;
-  newProg[newItem] = '..';
+  newProgression[newItem] = '..';
   return newProgression.join(' ');
 };
 
@@ -23,12 +23,12 @@ const generateQuestion = (progression, item) => {
 const generateRound = () => {
   const num1 = generateRandom(1, 10);
   const randomStep = generateRandom(1, 5);
-  const progLength = generateRandom(5, 10);
+  const progressionLength = generateRandom(5, 10);
   const randomElement = generateRandom(1, progressionLength);
   // создаем прогрессию
-  const progression = createProgression(num1, progLength, randomStep);
+  const progression = createProgression(num1, progressionLength, randomStep);
   // удаляем элемент, то есть генерируем вопрос
-  const question = progWithoutElement(progression, randomElement);
+  const question = generateQuestion(progression, randomElement);
   // получаем правильный ответ = удаленный элемент
   const deletedElement = num1 + (randomStep * randomElement);
   const answer = String(deletedElement);

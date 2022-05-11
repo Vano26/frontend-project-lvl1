@@ -3,6 +3,8 @@ import generateRandom from '../generateRandom.js';
 
 const rule = 'What is the result of the expression?';
 
+const operators = ['+', '-', '*'];
+
 const calc = (num1, num2, operator) => {
   switch (operator) {
     case '+':
@@ -10,11 +12,11 @@ const calc = (num1, num2, operator) => {
     case '-':
       return num1 - num2;
     case '*':
-      return num1 * num2; 
+      return num1 * num2;
+    default:
+      throw new Error(`operation ${operator} is not supported`);
   }
 };
-
-const operators = ['+', '-', '*'];
 
 const generateRound = () => {
   const newOperator = operators[generateRandom(0, 2)];
