@@ -1,39 +1,16 @@
-import readlineSync from 'readline-sync';
+import play from '../index.js';
+import generateRandom from '../generateRandom.js';
 
-const brainEven = () => {
-  // приветствуем игрока
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  // сообщаем правила
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const isEven = (number) => (number % 2 === 0);
 
-  // функция генерации случайноего числа (с округлением)
-  const randomNum = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
-
-  // функция проверки числа на четность
-  const isEven = (num) => {
-    if (num % 2 === 0) {
-      return 'yes';
-    } return 'no';
-  };
-
-  // первый раунд
-  for (let i = 0; i < 3; i += 1) {
-    const num = randomNum(1, 99); // генерим случайное число
-    const answer = isEven(num); // проверяем первое число на четность
-    console.log(`Question: ${num}`); // задаем вопрос
-    const userAnswer = readlineSync.question('Your answer: '); // получаем ответ игрока
-    if (userAnswer === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-      console.log(`Let's try again, ${userName}!`); // отвечаем игроку
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+const generateRound = () => {
+	  const question = generateRandom(1, 100);
+	  const answer = isEven(question) ? 'yes' : 'no';
+	  return [question, answer];
 };
+
+const brainEven = () => play(rule, generateRound);
 
 export default brainEven;

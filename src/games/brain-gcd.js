@@ -1,23 +1,23 @@
 import play from '../index.js';
-import generateRandom from '../genereteRandom.js';
+import generateRandom from '../generateRandom.js';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
-const NOD = (x, y) => {
+const gcd = (x, y) => {
   if (y === 0) {
     return x;
   }
-  return NOD(y, x % y);
+  return gcd(y, x % y);
 };
 
-const questionAnswer = () => {
+const generateRound = () => {
   const num1 = generateRandom(1, 100);
   const num2 = generateRandom(1, 100);
   const question = `${num1} ${num2}`;
-  const answer = String(NOD(num1, num2));
+  const answer = String(gcd(num1, num2));
   return [question, answer];
 };
 
-const brainGCD = () => play(rule, questionAnswer);
+const brainGCD = () => play(rule, generateRound);
 
 export default brainGCD;

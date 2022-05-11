@@ -1,9 +1,8 @@
 import play from '../index.js';
-import generateRandom from '../genereteRandom.js';
+import generateRandom from '../generateRandom.js';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-// функция проверки простое ли число
 const isPrime = (num) => {
   if (num < 2) {
     return false;
@@ -16,14 +15,13 @@ const isPrime = (num) => {
   return true;
 };
 
-// вопрос-ответ
-const questionAnswer = () => {
+const generateRound = () => {
   const num = generateRandom(1, 100);
   const question = num;
   const answer = isPrime(num) ? 'yes' : 'no';
   return [question, answer];
 };
 
-const brainPrime = () => play(rule, questionAnswer);
+const brainPrime = () => play(rule, generateRound);
 
 export default brainPrime;
