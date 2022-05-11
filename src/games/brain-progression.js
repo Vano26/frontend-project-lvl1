@@ -1,4 +1,5 @@
-import { randomNum, game } from '../index.js';
+import play from '../index.js';
+import generateRandom from '../genereteRandom.js';
 
 const rule = 'What number is missing in the progression?';
 // создаем прогрессию
@@ -20,10 +21,10 @@ const progWithoutElement = (progression, item) => {
 
 // задаем вопрос - получаем ответ
 const questionAnswer = () => {
-  const num1 = randomNum(1, 10);
-  const randomStep = randomNum(1, 5);
-  const progLength = randomNum(5, 10);
-  const randomElement = randomNum(1, progLength);
+  const num1 = generateRandom(1, 10);
+  const randomStep = generateRandom(1, 5);
+  const progLength = generateRandom(5, 10);
+  const randomElement = generateRandom(1, progLength);
   // создаем прогрессию
   const progression = prog(num1, progLength, randomStep);
   // удаляем элемент, то есть генерируем вопрос
@@ -34,6 +35,6 @@ const questionAnswer = () => {
   return [question, answer];
 };
 
-const brainProgression = () => game(rule, questionAnswer);
+const brainProgression = () => play(rule, questionAnswer);
 
 export default brainProgression;

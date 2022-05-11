@@ -10,7 +10,7 @@ const brainEven = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   // функция генерации случайноего числа (с округлением)
-  const randomNum = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+  const randomNum = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
   // функция проверки числа на четность
   const isEven = (num) => {

@@ -1,25 +1,29 @@
-import { randomNum, game } from '../index.js';
+import play from '../index.js';
+import generateRandom from '../genereteRandom.js';
 
 const rule = 'What is the result of the expression?';
 
 const calc = (num1, num2, operator) => {
-  if (operator === '+') {
-    return num1 + num2;
-  } if (operator === '-') {
-    return num1 - num2;
-  } return num1 * num2;
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2; 
+  }
 };
 
 const questionAnswer = () => {
   const operators = ['+', '-', '*'];
   const newOperator = operators[randomNum(0, 3)];
-  const newNum1 = randomNum(1, 11);
-  const newNum2 = randomNum(1, 11);
+  const newNum1 = generateRandom(1, 10);
+  const newNum2 = generateRandom(1, 10);
   const question = `${newNum1} ${newOperator} ${newNum2}`;
   const answer = String(calc(newNum1, newNum2, newOperator));
   return [question, answer];
 };
 
-const brainCalc = () => game(rule, questionAnswer);
+const brainCalc = () => play(rule, questionAnswer);
 
 export default brainCalc;
