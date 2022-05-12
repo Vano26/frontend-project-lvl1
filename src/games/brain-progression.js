@@ -2,7 +2,7 @@ import play from '../index.js';
 import generateRandom from '../generateRandom.js';
 
 const rule = 'What number is missing in the progression?';
-// создаем прогрессию
+
 const createProgression = (start, length, counter) => {
   const result = [];
   for (let i = 0; i < length; i += 1) {
@@ -11,25 +11,19 @@ const createProgression = (start, length, counter) => {
   return result;
 };
 
-// меняем элемент прогрессии
 const generateQuestion = (progression, item) => {
   const newProgression = progression.slice(0);
-  const newItem = item;
-  newProgression[newItem] = '..';
+  newProgression[item] = '..';
   return newProgression.join(' ');
 };
 
-// задаем вопрос - получаем ответ
 const generateRound = () => {
   const num1 = generateRandom(1, 10);
   const randomStep = generateRandom(1, 5);
-  const progressionLength = generateRandom(5, 10);
+  const progressionLength = generateRandom(5, 9);
   const randomElement = generateRandom(1, progressionLength);
-  // создаем прогрессию
   const progression = createProgression(num1, progressionLength, randomStep);
-  // удаляем элемент, то есть генерируем вопрос
   const question = generateQuestion(progression, randomElement);
-  // получаем правильный ответ = удаленный элемент
   const deletedElement = num1 + (randomStep * randomElement);
   const answer = String(deletedElement);
   return [question, answer];
