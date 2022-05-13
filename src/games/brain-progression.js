@@ -20,8 +20,8 @@ const generateQuestion = (progression, item) => {
 const generateRound = () => {
   const num1 = generateRandom(1, 10);
   const randomStep = generateRandom(1, 5);
-  const progressionLength = generateRandom(5, 9);
-  const randomElement = generateRandom(1, progressionLength);
+  const progressionLength = generateRandom(5, 10);
+  const randomElement = generateRandom(1, progressionLength - 1);
   const progression = createProgression(num1, progressionLength, randomStep);
   const question = generateQuestion(progression, randomElement);
   const deletedElement = num1 + (randomStep * randomElement);
